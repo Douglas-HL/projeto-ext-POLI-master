@@ -28,7 +28,7 @@ function Highmid() {
         <div className='highmid-container'>
             <div className='img-container'>
                 {/* Imagem */}
-                <img className='img' src={procape} alt="img" />
+                <img className='img' src={procape} alt="imagem do procape" />
                 
                 {/* Container de texto */}
                 <div className='text-container'>

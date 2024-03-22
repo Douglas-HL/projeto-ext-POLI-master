@@ -2,10 +2,10 @@ import '../components/login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 function Login() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate(); // Função de navegação
 
     const handleSubmit = async (event) => {
@@ -15,7 +15,6 @@ function Login() {
 
         try {
             const response = await fetch('http://localhost:5000/login', {
-                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,10 +26,11 @@ function Login() {
                 // Redireciona para a página de logado
                 navigate('/logado');
             } else {
-                console.error('Falha no login');
+                setError('Falha no login');
             }
         } catch (error) {
             console.error('Erro ao fazer login:', error);
+            setError('Erro ao fazer login');
         }
     };
 
@@ -38,6 +38,7 @@ function Login() {
         <div className="login-container">
             <h1 className='login-text'>Login</h1>
             <div className="login-box">
+                {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit} action="/login" method="post">
                     <label className='login-text2' htmlFor="cpf">CPF:</label>
                     <input
@@ -57,7 +58,7 @@ function Login() {
                         onChange={(event) => setSenha(event.target.value)}
                     /><br />
                     
-                    <input type="submit" value="Enviar" />
+                    <input type="submit" value="Entrar" />
                 </form>
                 
             </div>

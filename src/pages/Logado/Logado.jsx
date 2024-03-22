@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './login.css';
-import Header2 from "../../components/header2.jsx";
+import './tela_paciente.css';
+import Header2 from "../../components/header3.jsx";
 
 
 function Logado() {

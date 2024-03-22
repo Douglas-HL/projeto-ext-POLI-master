@@ -1,0 +1,32 @@
+.Fundoheader3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #DCDCDC;
+    padding: 0 20px;
+}
+
+.Logo3 {
+    margin-top: 0.8vh ;
+    margin-bottom: 0.8vh;
+    margin-left: 0; /* Remova a margem à esquerda */
+    width: auto;
+    height: auto;
+    max-width: 24vh;
+}
+
+.logout-button {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #f44336;  
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; 
+}

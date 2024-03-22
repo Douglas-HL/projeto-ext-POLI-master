@@ -20,11 +20,12 @@ function Header() {
                     </button>
                     </Link>
                     <Link to = '/resultados'>
-                    <button className='Resu'>Resultados</button>
+                    <button className='Resu'>Paciente</button>
                     </Link>
-                <button className='Not'>Notícias</button>  
+                    <Link to = "/med"><button className='Not'>Área Médica</button> </Link>  
                 </div>
             </div>
         </header>
     )
 } export default Header
+

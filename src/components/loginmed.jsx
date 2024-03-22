@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Loginmed() {
     const [id, setId] = useState('');
     const [senhamed, setSenhamed] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate(); // Função de navegação
 
     const handleSubmit = async (event) => {
@@ -14,7 +15,6 @@ function Loginmed() {
 
         try {
             const response = await fetch('http://localhost:5000/loginmed', {
-                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -26,10 +26,11 @@ function Loginmed() {
                 // Redireciona para a página de logado
                 navigate('/medlogado');
             } else {
-                console.error('Falha no login');
+                setError('Falha no login');
             }
         } catch (error) {
             console.error('Erro ao fazer login:', error);
+            setError('Erro ao fazer login');
         }
     };
 
@@ -37,6 +38,7 @@ function Loginmed() {
         <div className="login-container">
             <h1 className='login-text'>Login Médico</h1>
             <div className="login-box">
+                {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit} action="/login" method="post">
                     <label className='login-text2' htmlFor="id">id:</label>
                     <input
@@ -56,7 +58,7 @@ function Loginmed() {
                         onChange={(event) => setSenhamed(event.target.value)}
                     /><br />
                     
-                    <input type="submit" value="Enviar" />
+                    <input type="submit" value="Entrar" />
                 </form>
             </div>
         </div>

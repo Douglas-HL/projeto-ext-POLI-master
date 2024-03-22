@@ -1,0 +1,27 @@
+.text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #0000;
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+}
+
+.container-inst {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24vh;
+    margin-right: 24vh;
+}
+
+.container-inst span {
+    font-family: "Poppins", sans-serif;
+    text-align: justify; /* Justificar o texto dentro do span */
+}
+
+
+.cisam  {
+    margin-top: 1vh;
+    width: 50%; 
+    height: auto; 
+}
